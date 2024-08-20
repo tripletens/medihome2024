@@ -23,12 +23,17 @@
 
     <script src="https://cdn.tailwindcss.com"></script>
 
+    <script
+      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.3.5/dist/alpine.min.js"
+      defer
+    ></script>
+
     @toastr_css
 </head>
 
 <body>
     <div id="app">
-        {{--  @include('const.navbar')  --}}
+        @include('const.navbar')
 
         <main class="py-4">
             @yield('content')

@@ -1,64 +1,89 @@
-<nav id="navbar_container" class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-            <div class="container">
-                <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src="{{asset('images/medihome_logo.png')}}">
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
+<nav
+      class="flex items-center justify-between flex-wrap p-6 fixed w-full z-10 top-0"
+      x-data="{ isOpen: false }"
+      @keydown.escape="isOpen = false"
+      :class="{ 'shadow-lg bg-indigo-900' : isOpen , 'bg-gray-800' : !isOpen}"
+    >
+      <!--Logo etc-->
+      <div class="flex items-center flex-shrink-0 text-white mr-6">
+        <a
+          class="text-white no-underline hover:text-white hover:no-underline"
+          href="#"
+        >
+          <span class="text-2xl pl-2"
+            ><i class="em em-grinning"></i> Brand McBrandface</span
+          >
+        </a>
+      </div>
 
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
+      <!--Toggle button (hidden on large screens)-->
+      <button
+        @click="isOpen = !isOpen"
+        type="button"
+        class="block lg:hidden px-2 text-gray-500 hover:text-white focus:outline-none focus:text-white"
+        :class="{ 'transition transform-180': isOpen }"
+      >
+        <svg
+          class="h-6 w-6 fill-current"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path
+            x-show="isOpen"
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z"
+          />
+          <path
+            x-show="!isOpen"
+            fill-rule="evenodd"
+            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z"
+          />
+        </svg>
+      </button>
 
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto d-flex justify-space-between">
-                        <!-- Authentication Links -->
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{{ route('landing-page') }}">{{ __('Home') }}</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{{ route('about-page') }}">{{ __('About Us') }}</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{{ route('testimonial-page') }}">{{ __('Testimonials') }}</a>
-                        </li>
-                        <li class="nav-item mx-2">
-                            <a class="nav-link" href="{{ route('contact-us-page') }}">{{ __('Contact Us') }}</a>
-                        </li>
-                        @guest
-                        <!-- @if (Route::has('login'))
-                        <li class="nav-item mx-5">
-                            <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                        </li>
-                        @endif -->
-
-                        @if (Route::has('register'))
-                        <li class="nav-item mx-2">
-                            <a class="nav-link get-started text-white"  href="#" title="Coming Soon">{{ __('Get Started') }}</a>
-                        </li>
-                        @endif
-                        @else
-                        <li class="nav-item dropdown">
-                            <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                {{ Auth::user()->name }}
-                            </a>
-
-                            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    {{ __('Logout') }}
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                    @csrf
-                                </form>
-                            </div>
-                        </li>
-                        @endguest
-                    </ul>
-                </div>
-            </div>
-        </nav>
+      <!--Menu-->
+      <div
+        class="w-full flex-grow lg:flex lg:items-center lg:w-auto"
+        :class="{ 'block shadow-3xl': isOpen, 'hidden': !isOpen }"
+        @click.away="isOpen = false"
+        x-show.transition="true"
+      >
+        <ul
+          class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center"
+        >
+          <li class="mr-3">
+            <a
+              class="inline-block py-2 px-4 text-white no-underline"
+              href="#"
+              @click="isOpen = false"
+              >Active
+            </a>
+          </li>
+          <li class="mr-3">
+            <a
+              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+              href="#"
+              @click="isOpen = false"
+              >link
+            </a>
+          </li>
+          <li class="mr-3">
+            <a
+              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+              href="#"
+              @click="isOpen = false"
+              >link
+            </a>
+          </li>
+          <li class="mr-3">
+            <a
+              class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
+              href="#"
+              @click="isOpen = false"
+              >link
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
