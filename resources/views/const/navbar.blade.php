@@ -25,22 +25,22 @@
         x-show.transition="true">
         <ul class="pt-6 lg:pt-0 list-reset lg:flex justify-end flex-1 items-center">
             <li class="mr-3">
-                <a class="inline-block py-2 px-4 text-white no-underline" href="#" @click="isOpen = false">Active
+                <a class="inline-block py-2 px-4 text-white no-underline" href="{{ route('landing-page') }}" @click="isOpen = false">Home
                 </a>
             </li>
             <li class="mr-3">
                 <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                    href="#" @click="isOpen = false">link
+                    href="{{ route('about-page') }}" @click="isOpen = false">About
                 </a>
             </li>
             <li class="mr-3">
                 <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                    href="#" @click="isOpen = false">link
+                    href="{{ route('testimonial-page') }}" @click="isOpen = false">Testimonial
                 </a>
             </li>
             <li class="mr-3">
                 <a class="inline-block text-gray-600 no-underline hover:text-gray-200 hover:text-underline py-2 px-4"
-                    href="#" @click="isOpen = false">link
+                    href="{{ route('contact-us-page') }}" @click="isOpen = false">Contact
                 </a>
             </li>
         </ul>
