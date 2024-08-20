@@ -35,7 +35,7 @@
     <div id="app">
         @include('const.navbar')
 
-        <main class="py-4">
+        <main class="py-14">
             @yield('content')
         </main>
 
