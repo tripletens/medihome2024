@@ -1,98 +1,86 @@
-<div class="container-fluid my-5 footer-div pt-2 pb-2">
-    <div class="row mt-5 p-3 py-3">
-        <div class="col-md-3 px-3">
-            <a class="" href="{{ url('/') }}">
-                <img src="{{asset('images/medihome_logo.png')}}">
-            </a>
-            <h4 class="footer-inner-content mx-5">For Enquiries...</h4>
-            <div class="row footer-inner-content px-3">
-                <div class="col-md-1 my-1">
-                    <img src="{{asset('images/phone.png')}}">
-                </div>
-                <div class="col-md-10 my-1"> +2349015222109</div>
-            </div>
-            <div class="row footer-inner-content px-3">
-                <div class="col-md-1 my-1">
-                    <img src="{{asset('images/message.png')}}">
-                </div>
-                <div class="col-md-10 my-1">
-                    <p>info@medihomecare.com</p>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-3 ">
-            <h4 class="footer-inner-content px-3 footer-second-header">Support</h4>
-
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Legal Policy
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Terms and Conditions
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Contact
-                </p>
+<div class="bg-gray-900 py-4">
+    <div class="container mx-auto flex items-center justify-between px-4">
+        <div class="logo">
+            <a href="/">
+                <img src="{{asset('images/medihome_logo.png')}}" alt="Logo" class="h-10">
             </a>
         </div>
-        <div class="col-md-3">
-            <h4 class="footer-inner-content px-3 footer-second-header">Pages</h4>
-
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                   Home
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    About us
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Pricing  
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Contact Us  
-                </p>
-            </a>
-        </div>
-        <div class="col-md-3">
-            <h4 class="footer-inner-content px-3 footer-second-header">Resources</h4>
-
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Ask a Doctor Online
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Chat with a Doctor
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Book Appointment
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Online Covid-19 Care
-                </p>
-            </a>
-            <a href="#" class="footer-inner-content-link">
-                <p class="footer-inner-content px-3">
-                    Video Consultation
-                </p>
-            </a>
-        </div>
+        
+        <ul class="flex space-x-4">
+            <li>
+                <a href="#" class="text-white hover:text-gray-400 text-xl">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-white hover:text-gray-400 text-xl">
+                    <i class="fab fa-twitter"></i>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="text-white hover:text-gray-400 text-xl">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+            </li>
+        </ul>
     </div>
 </div>
 
-<p class="text-center"> All rights Reserved &copy; <?php echo date('Y');?></p>
+<footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="space-y-4">
+                <h4 class="text-2xl font-semibold">About</h4>
+                <p class="text-lg">Lorem ipsum dolor sit amet <br>consectetur adipiscing elit sollicit udin <br> netus quis ornare. Massa pharetra in <br> nec sed nunc.</p>
+                <p class="text-lg">nisl viverra massa imperdiet. Dui <br> mattis quis congue fames.</p>
+            </div>
+            
+            <div class="space-y-4 ">
+                <h4 class="text-2xl font-semibold">Quick Link</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline text-lg">About Us</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Services</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Case</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Pricing</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Contact Us</a></li>
+                </ul>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-2xl font-semibold">Useful Links</h4>
+                <ul class="space-y-2">
+                    <li><a href="#" class="hover:underline text-lg">Privacy Policy</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Terms & Condition</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Support</a></li>
+                    <li><a href="#" class="hover:underline text-lg">Disclaimer</a></li>
+                    <li><a href="#" class="hover:underline text-lg">FAQ</a></li>
+                </ul>
+            </div>
+            
+            <div class="space-y-4">
+                <h4 class="text-xl font-semibold">Contact Us</h4>
+                <p>Tincidunt neque pretium lectus donec risus.</p>
+                <ul class="space-y-2">
+    <li class="flex items-center space-x-2 text-lg">
+    <img class="w-4" src="{{asset('images/location-dot-solid.svg')}}">
+        <span>Lagos, Nigeria</span>
+    </li>
+    <li class="flex items-center space-x-2 text-lg">
+    <img class="w-4" src="{{asset('images/envelope-solid.svg')}}">
+        <a href="mailto:info@medihomecare.com" class="hover:underline">info@medihomecare.com</a>
+    </li>
+    <li class="flex items-center space-x-2 text-lg">
+    <img class="w-4" src="{{asset('images/phone-solid.svg')}}">
+        <a href="tel:+2349015222109" class="hover:underline">+234 901 522 2109</a>
+    </li>
+</ul>
+
+            </div>
+            
+        </div>
+    </div>
+    <div class="p-5">
+    <p class="text-lg text-center"> All rights Reserved &copy; <?php echo date('Y');?></p>
+    <div>
+</footer>

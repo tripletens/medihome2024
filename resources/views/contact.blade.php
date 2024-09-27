@@ -1,80 +1,47 @@
 @extends('layouts.landing')
 
 @section('content')
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 about_header">
-            <h2 class="about-header-content">Contact Us</h2>
+<div class="p-auto">
+    <div class="relative bg-gray-900 text-white shadow-lg overflow-hidden cursor-pointer h-80" style="background-image: url('{{ asset('images/image-3.jpg') }}'); background-size: cover; background-position: center; opacity-40;">
+        <div class="absolute inset-0 bg-black opacity-25"></div>  
+        <div class="absolute inset-0 bg-opacity-40 flex items-center justify-center">
+            <h2 class="text-4xl sm:text-7xl font-bold text-center text-white drop-shadow-md">Contact Us</h2>
         </div>
     </div>
 </div>
 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-12 col-lg-12 col-xs-12 col-sm-12 my-5">
-            <form method="POST" action="{{route('submit_contact_form_page')}}">
+<section class="py-16 bg-gray-200">
+    <div class="container mx-auto px-4">
+        <div class="text-center mb-10">
+            <span class="text-lg text-gray-600 uppercase font-semibold">Let’s Connect</span>
+            <h2 class="text-4xl font-bold mt-2">Don't Hesitate to Contact Us</h2>
+        </div>
+        <div class="bg-white p-8 rounded-lg">
+            <form method="post" action="{{ route('contact.send') }}" id="contact-form">
                 @csrf
-                @if ($errors->any())
-                <div class="">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                        <span class="alert alert-danger">{{ $error }}</span>
-                        @endforeach
-                    </ul>
-                </div>
-                @endif
-
-                
-                <div class="row col-md-8 mx-auto my-auto">
-                    @if(session('success'))
-                    <span class="alert alert-success mx-auto text-center">{{ session('success') }}</span>
-                    @endif
-                    <div class="form-group col-md-6 py-3">
-                        <label for="firstname" class="label">First Name:</label>
-                        <input class="form-control" name="firstname" type="text" placeholder="Enter your First Name" />
+                <div class="grid gap-4">
+                    <div class="col-span-1 md:col-span-1">
+                        <input placeholder="Your Name" required type="text" name="form_name" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
                     </div>
-                    <div class="form-group col-md-6 py-3">
-                        <label for="lastname" class="label">Last Name:</label>
-                        <input class="form-control" name="lastname" type="text" placeholder="Enter your Last Name" />
-                        @error('phone')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
+                    <div class="col-span-1 md:col-span-1">
+                        <input placeholder="Your Email" required type="email" name="email" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="col-span-1 md:col-span-1">
+                        <input placeholder="Phone Number" required type="text" name="phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    </div>
+                    <div class="col-span-1">
+                        <textarea name="form_message" placeholder="Message" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" rows="4"></textarea>
+                    </div>
+                    <div class="col-span-1 text-center flex justify-end ">
+                        <input id="form_botcheck" type="hidden" name="form_botcheck">
+                        <button type="submit" class="bg-blue-500 text-white py-3 px-6 rounded-lg hover:bg-blue-600 transition duration-300">
+                            Send Message <i class="flaticon-right-arrow-1"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="row col-md-8 mx-auto my-auto mt-1">
-                    <div class="form-group col-md-6 py-3">
-                        <label for="email" class="label">Email Address:</label>
-                        <input class="form-control" name="email" type="text" placeholder="Enter your Email Address" />
-                        @error('email')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                    <div class="form-group col-md-6 py-3">
-                        <label for="phone" class="label">Phone Number:</label>
-                        <div class="input-group mb-3">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">+234</span>
-                            </div>
-                            <input class="form-control" required type="text" name="phone" placeholder="Enter your Phone Number" />
-                        </div>
-
-                        @error('phone')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <div class="row col-md-8 mx-auto my-auto">
-                    <div class="form-group col-md-12 col-sm-12 py-3">
-                        <label for="address" class="label">Address:</label>
-                        <textarea class="form-control" name="address" aria-placeholder="Enter your Physical Address" placeholder="Enter your Physical Address"></textarea>
-                        @error('address')
-                        <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div>
-                </div>
-                <button class="button mx-auto" name="contactbtn" type="submit"> Submit</button>
             </form>
         </div>
     </div>
-</div>
+</section>
+
 @endsection

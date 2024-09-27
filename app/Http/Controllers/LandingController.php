@@ -28,4 +28,12 @@ class LandingController extends Controller
         return view('contact');
     }
 
+    public function missionAndVision() {
+        return view('missionAndVision');
+    }
+
+    public function whatWeOffer() {
+        return view('whatWeOffer');
+    }
+    
 }
